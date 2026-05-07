@@ -10,10 +10,9 @@ window.addEventListener('scroll', () => {
 
 // Scroll Reveal Observer
 const revealElements = document.querySelectorAll('.reveal');
-const staggerContainers = document.querySelectorAll('.grid-3, .services-wrapper');
 
 const revealOptions = {
-  threshold: 0.15,
+  threshold: 0.1,
   rootMargin: "0px 0px -50px 0px"
 };
 
@@ -30,13 +29,13 @@ const revealObserver = new IntersectionObserver(function(entries, observer) {
       staggerItems.forEach((item, index) => {
         setTimeout(() => {
           item.classList.add('active');
-        }, index * 100); // 100ms delay between items
+        }, index * 120); // 120ms delay between items
       });
     }
     
     // Trigger counters if this is the stats section
-    if (entry.target.querySelector('.stat-num')) {
-      const counters = entry.target.querySelectorAll('.stat-num');
+    if (entry.target.querySelector('.stat-value[data-count]')) {
+      const counters = entry.target.querySelectorAll('.stat-value[data-count]');
       counters.forEach(counter => animateCount(counter));
     }
 
@@ -51,7 +50,7 @@ revealElements.forEach(el => {
 // Counter Animation
 function animateCount(el) {
   const target = +el.getAttribute('data-count');
-  if (isNaN(target)) return; // skip the % sign
+  if (isNaN(target)) return;
 
   let current = 0;
   const duration = 2000; // ms
