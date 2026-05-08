@@ -3,217 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jaffer Inc. | Attorneys & Conveyancers</title>
-  <!-- Added cache-busting to ensure GitHub Pages loads the new CSS -->
-  <link rel="stylesheet" href="styles.css?v=3.0"/>
+  <title>Jaffer Inc | Attorneys & Conveyancer</title>
+  <link rel="stylesheet" href="styles.css?v=4.0"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-  <!-- Premium Ambient Background -->
-  <div class="ambient-bg">
-    <div class="light-beam one"></div>
-    <div class="light-beam two"></div>
-    <div class="texture-overlay"></div>
+  <!-- Lux Gold Ambient Background -->
+  <div class="gold-bg">
+    <div class="gold-orb orb-a"></div>
+    <div class="gold-orb orb-b"></div>
+    <div class="gold-lines"></div>
   </div>
 
-  <nav class="navbar reveal">
-    <div class="container nav-inner">
-      <div class="nav-brand">
-        <div class="logo-mark">
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M50 10 L75 30 L75 85 L50 95 L25 85 L25 30 Z" stroke="url(#gold-grad)" stroke-width="3"/>
-            <path d="M50 25 L50 80" stroke="url(#gold-grad)" stroke-width="3"/>
-            <defs>
-              <linearGradient id="gold-grad" x1="25" y1="10" x2="75" y2="95" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#E5C07B"/>
-                <stop offset="1" stop-color="#997B3C"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div class="logo-text">
-          <span class="title">JAFFER INC.</span>
-          <span class="subtitle">ATTORNEYS & CONVEYANCERS</span>
+  <nav class="nav reveal">
+    <div class="container nav__inner">
+      <div class="brand">
+        <span class="brand__icon">J</span>
+        <div class="brand__text">
+          <span class="brand__title">JAFFER INC</span>
+          <span class="brand__subtitle">ATTORNEYS & CONVEYANCER</span>
         </div>
       </div>
-      <div class="nav-links">
+      <div class="nav__links">
         <a href="#about">The Firm</a>
-        <a href="#services">Expertise</a>
-        <a href="#contact" class="btn btn-sm btn-gold">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#contact" class="btn btn--ghost">Contact</a>
       </div>
     </div>
   </nav>
 
   <header class="hero">
-    <div class="container hero-content reveal slide-up">
-      <div class="hero-badge">Est. 2001</div>
-      <h1 class="hero-title">
-        Mastering the <br />
-        <span class="italic text-gold">Art of Law.</span>
-      </h1>
-      <p class="hero-desc">
-        Delivering uncompromising legal strategy, elite conveyancing, and dedicated counsel to protect your legacy and business interests.
-      </p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
-        <a href="#services" class="btn btn-text">View Practice Areas &rarr;</a>
+    <div class="container hero__grid reveal slide-up">
+      <div class="hero__text">
+        <p class="hero__kicker">Est. 2001 • Pretoria</p>
+        <h1>Exceptional Legal Strategy<br><span class="text-gold">Rooted in Integrity</span></h1>
+        <p class="hero__lead">
+          Jaffer Inc delivers premium legal counsel and conveyancing excellence for individuals,
+          families, and businesses. Every engagement is confidential, precise, and outcome-driven.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--gold" href="#contact">Book Consultation</a>
+          <a class="btn btn--outline" href="#services">Explore Services</a>
+        </div>
+      </div>
+
+      <!-- Business card styled panel based on images -->
+      <div class="hero__card">
+        <div class="card__top">
+          <div class="logo-mark"></div>
+          <div>
+            <h2>JAFFER INC</h2>
+            <p>Attorneys and Conveyancer</p>
+          </div>
+        </div>
+        <div class="card__mid">
+          <h3>Riyad Jaffer <span>LLB (UP)</span></h3>
+          <p><strong>Cell:</strong> 083 257 8691</p>
+          <p><strong>Tel:</strong> (012) 327 1200 / 327 1184</p>
+          <p><strong>E-mail:</strong> riyad@saharaonline.co.za</p>
+        </div>
+        <div class="card__bottom">
+          <p>577 Carl Str</p>
+          <p>Pretoria West</p>
+          <p>0183</p>
+        </div>
       </div>
     </div>
   </header>
 
-  <section id="about" class="section border-top">
+  <section id="about" class="section">
     <div class="container reveal fade-in">
-      <div class="section-heading text-center">
-        <h2>A Legacy of <span class="italic text-gold">Integrity</span></h2>
-        <p>Built on trust, driven by decisive legal action.</p>
+      <div class="section__header">
+        <h2>The Firm</h2>
+        <p>Legacy, integrity, and decisive legal action.</p>
       </div>
-      
-      <div class="grid grid-3">
-        <div class="feature-card stagger-item">
-          <div class="card-number">01</div>
-          <h3>Strategic Counsel</h3>
-          <p>We do not just react to legal challenges; we anticipate them. Our counsel is designed to position you for the best possible outcome.</p>
+
+      <div class="grid grid--3">
+        <div class="tile">
+          <span class="tile__num">01</span>
+          <h3>Client-Centered Practice</h3>
+          <p>Personal, confidential, and focused on outcomes that protect your future.</p>
         </div>
-        <div class="feature-card stagger-item">
-          <div class="card-number">02</div>
-          <h3>Property Elite</h3>
-          <p>Seamless execution of property transfers and bond registrations. We navigate the complexities of real estate law with unmatched precision.</p>
+        <div class="tile">
+          <span class="tile__num">02</span>
+          <h3>Conveyancing Specialists</h3>
+          <p>Transfers, bonds, and property matters handled with precision and speed.</p>
         </div>
-        <div class="feature-card stagger-item">
-          <div class="card-number">03</div>
-          <h3>Absolute Discretion</h3>
-          <p>Your matters are handled with the highest level of confidentiality and professionalism. We protect your privacy as fiercely as your rights.</p>
+        <div class="tile">
+          <span class="tile__num">03</span>
+          <h3>Strategic Representation</h3>
+          <p>Clear legal strategy and formidable courtroom presence when matters escalate.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-stats">
+  <section class="stats">
     <div class="container reveal slide-up">
-      <div class="stats-wrapper">
-        <div class="stat-block">
-          <div class="stat-value" data-count="1200">0</div>
-          <div class="stat-label">Matters Resolved</div>
+      <div class="stats__grid">
+        <div class="stat">
+          <span class="stat__value" data-count="1200">0</span>
+          <span class="stat__label">Matters Resolved</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-block">
-          <div class="stat-value" data-count="25">0</div>
-          <div class="stat-label">Years of Excellence</div>
+        <div class="stat">
+          <span class="stat__value" data-count="25">0</span>
+          <span class="stat__label">Years of Practice</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-block">
-          <div class="stat-value"><span data-count="98">0</span>%</div>
-          <div class="stat-label">Client Success Rate</div>
+        <div class="stat">
+          <span class="stat__value" data-count="98">0</span><span class="stat__suffix">%</span>
+          <span class="stat__label">Client Satisfaction</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value" data-count="35">0</span>
+          <span class="stat__label">Corporate Partners</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="services" class="section border-top">
+  <section id="services" class="section">
     <div class="container reveal fade-in">
-      <div class="section-heading text-center">
-        <h2>Areas of <span class="italic text-gold">Expertise</span></h2>
-        <p>Comprehensive legal mastery across multiple disciplines.</p>
+      <div class="section__header">
+        <h2>Practice Areas</h2>
+        <p>Every service from the provided cards, fully included below.</p>
       </div>
 
-      <div class="services-grid">
-        <div class="service-item stagger-item">
-          <h4>Bail Applications</h4>
-          <p>Rapid, strategic intervention when freedom is on the line.</p>
-        </div>
-        <div class="service-item stagger-item">
-          <h4>High Court Cases</h4>
-          <p>Formidable representation in complex civil and commercial litigation.</p>
-        </div>
-        <div class="service-item stagger-item">
-          <h4>Company Registrations</h4>
-          <p>Structuring your corporate entities for compliance and growth.</p>
-        </div>
-        <div class="service-item stagger-item">
-          <h4>Drafting of Agreements</h4>
-          <p>Ironclad contracts that protect your interests and prevent disputes.</p>
-        </div>
-        <div class="service-item stagger-item">
-          <h4>Labour Matters</h4>
-          <p>Expert guidance through CCMA, disciplinary hearings, and employment law.</p>
-        </div>
-        <div class="service-item stagger-item">
-          <h4>Property Transfers</h4>
-          <p>Swift, legally sound execution of residential and commercial property changes.</p>
-        </div>
-        <div class="service-item stagger-item">
-          <h4>Matrimonial Matters</h4>
-          <p>Sensitive, strong representation in divorces, custody, and family law.</p>
-        </div>
-        <div class="service-item stagger-item">
-          <h4>Deceased Estates</h4>
-          <p>Respectful, efficient winding up of estates to secure your family's future.</p>
-        </div>
+      <div class="services">
+        <div class="service"><span></span>Bail Applications</div>
+        <div class="service"><span></span>High Court Cases</div>
+        <div class="service"><span></span>Company Registrations</div>
+        <div class="service"><span></span>Drafting of Agreements</div>
+        <div class="service"><span></span>Labour Matters</div>
+        <div class="service"><span></span>Trade Mark Registrations</div>
+        <div class="service"><span></span>Property Transfers</div>
+        <div class="service"><span></span>Matrimonial Matters</div>
+        <div class="service"><span></span>Bond Registrations</div>
+        <div class="service"><span></span>Deceased Estates</div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section border-top">
+  <section id="contact" class="section">
     <div class="container reveal slide-up">
-      <div class="contact-box">
-        <div class="contact-content">
-          <h2>Request a <span class="italic text-gold">Consultation</span></h2>
-          <p class="mb-4">Speak directly with Riyad Jaffer. We are ready to provide the strategic legal counsel you require.</p>
-          
-          <ul class="contact-list">
-            <li>
-              <span class="label">Attorney</span>
-              <span class="value">Riyad Jaffer <small class="text-gold">LLB (UP)</small></span>
-            </li>
-            <li>
-              <span class="label">Mobile</span>
-              <span class="value">083 257 8691</span>
-            </li>
-            <li>
-              <span class="label">Office</span>
-              <span class="value">(012) 327 1200 / 327 1184</span>
-            </li>
-            <li>
-              <span class="label">Email</span>
-              <span class="value">riyad@saharaonline.co.za</span>
-            </li>
+      <div class="contact">
+        <div class="contact__left">
+          <h2>Contact</h2>
+          <p>Speak directly with Riyad Jaffer.</p>
+          <ul>
+            <li><strong>Riyad Jaffer</strong> — LLB (UP)</li>
+            <li><strong>Cell:</strong> 083 257 8691</li>
+            <li><strong>Tel:</strong> (012) 327 1200 / 327 1184</li>
+            <li><strong>Email:</strong> riyad@saharaonline.co.za</li>
           </ul>
         </div>
-        
-        <div class="contact-address">
-          <div class="address-card">
-            <h3>Chambers</h3>
-            <p>577 Carl Street<br/>Pretoria West<br/>0183<br/>South Africa</p>
-            <div class="map-view">
-              <span>📍 View on Maps</span>
-            </div>
-          </div>
+        <div class="contact__right">
+          <h3>Address</h3>
+          <p>577 Carl Str<br>Pretoria West<br>0183</p>
+          <div class="map">Pretoria • South Africa</div>
         </div>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-logo">
-          JAFFER INC.
-        </div>
-        <div class="footer-links">
-          <a href="#about">The Firm</a>
-          <a href="#services">Expertise</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-copy">
-          &copy; 2026 Jaffer Inc. All rights reserved.
-        </div>
-      </div>
+    <div class="container footer__inner">
+      <span>JAFFER INC • Attorneys & Conveyancer</span>
+      <span>© 2026 All Rights Reserved</span>
     </div>
   </footer>
 
-  <script src="app.js?v=3.0"></script>
+  <script src="app.js?v=4.0"></script>
 </body>
 </html>

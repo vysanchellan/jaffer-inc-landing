@@ -1,91 +1,45 @@
-// Navbar scroll effect
-const navbar = document.querySelector('.navbar');
+// navbar scroll
+const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
+  if (window.scrollY > 40) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
 });
 
-// Scroll Reveal Observer
-const revealElements = document.querySelectorAll('.reveal');
+// reveal animation
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('active');
+      io.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.1});
 
-const revealOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px"
+reveals.forEach(r => io.observe(r));
+
+// counters
+const counters = document.querySelectorAll('[data-count]');
+const animate = (el) => {
+  const target = +el.dataset.count;
+  let cur = 0;
+  const step = Math.ceil(target / 80);
+  const tick = () => {
+    cur += step;
+    if (cur >= target) el.textContent = target;
+    else { el.textContent = cur; requestAnimationFrame(tick); }
+  };
+  tick();
 };
 
-const revealObserver = new IntersectionObserver(function(entries, observer) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    
-    // Add active class to main reveal element
-    entry.target.classList.add('active');
-    
-    // Handle staggered children if present
-    const staggerItems = entry.target.querySelectorAll('.stagger-item');
-    if (staggerItems.length > 0) {
-      staggerItems.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add('active');
-        }, index * 120); // 120ms delay between items
-      });
-    }
-    
-    // Trigger counters if this is the stats section
-    if (entry.target.querySelector('.stat-value[data-count]')) {
-      const counters = entry.target.querySelectorAll('.stat-value[data-count]');
-      counters.forEach(counter => animateCount(counter));
-    }
-
-    observer.unobserve(entry.target);
-  });
-}, revealOptions);
-
-revealElements.forEach(el => {
-  revealObserver.observe(el);
-});
-
-// Counter Animation
-function animateCount(el) {
-  const target = +el.getAttribute('data-count');
-  if (isNaN(target)) return;
-
-  let current = 0;
-  const duration = 2000; // ms
-  const frameRate = 1000 / 60;
-  const totalFrames = Math.round(duration / frameRate);
-  const increment = target / totalFrames;
-
-  const update = () => {
-    current += increment;
-    if (current >= target) {
-      el.textContent = target;
-    } else {
-      el.textContent = Math.ceil(current);
-      requestAnimationFrame(update);
-    }
-  };
-  update();
-}
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    if(targetId === '#') return;
-    
-    const targetElement = document.querySelector(targetId);
-    if(targetElement) {
-      const offset = 80; // height of navbar
-      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
-      
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
+const statsObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      counters.forEach(animate);
+      statsObserver.disconnect();
     }
   });
-});
+}, {threshold: 0.2});
+
+const statsSection = document.querySelector('.stats');
+if (statsSection) statsObserver.observe(statsSection);
