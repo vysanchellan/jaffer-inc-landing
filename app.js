@@ -43,3 +43,19 @@ const statsObserver = new IntersectionObserver(entries => {
 
 const statsSection = document.querySelector('.stats');
 if (statsSection) statsObserver.observe(statsSection);
+
+// interactive hover tilt for hero card
+const heroCard = document.querySelector('.hero__card');
+if (heroCard) {
+  heroCard.addEventListener('mousemove', (e) => {
+    const rect = heroCard.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const rotateY = ((x / rect.width) - 0.5) * 6;
+    const rotateX = ((y / rect.height) - 0.5) * -6;
+    heroCard.style.transform = `translateY(-6px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+  heroCard.addEventListener('mouseleave', () => {
+    heroCard.style.transform = '';
+  });
+}
